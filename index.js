@@ -5,12 +5,12 @@ const DataEntry = require('./lib/DataEntry');
 const {writeFile} = require('./utils/html-generator.js');
 
 //generates the readme from a template
-const populateHTML = require('./src/readme-template.js');
+const populateHTML = require('./src/html-template.js');
 
-new DataEntry().dataCollection()
-    .then(teamData => {
-        return populateHTML(teamData);
-    })
+const dataEntry = new DataEntry();
+
+dataEntry.dataCollections()
+    .then(populateHTML(DataEntry.data))
     .then(htmlTemplate => {
         //console.log(pageMD);
         return writeFile(htmlTemplate);
