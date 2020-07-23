@@ -27,6 +27,7 @@
   "homepage": "https://github.com/josephptflanagan/20200726-Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^7.3.3",
+    "inquisitor": "0.0.4",
     "jest": "^26.1.0"
   }
 }
