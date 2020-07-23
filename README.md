@@ -1,7 +1,7 @@
-# 20200726 Team Profile Generator
+# Team Profile Generator
 
 ## GitHub Repository
-[GitHub]https://github.com/josephptflanagan/20200726-Team-Profile-Generator
+[GitHub](https://github.com/josephptflanagan/20200726-Team-Profile-Generator)
 
 ## Generated HTML Sample File
 
