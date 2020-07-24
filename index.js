@@ -7,12 +7,11 @@ const {writeFile} = require('./utils/html-generator.js');
 //generates the readme from a template
 const populateHTML = require('./src/html-template.js');
 
-const dataEntry = new DataEntry();
+const team = new DataEntry();
+team.dataCollection;
 
-dataEntry.dataCollection()
-    .then(populateHTML(dataEntry.data))
+  populateHTML(team)
     .then(htmlTemplate => {
-        //console.log(pageMD);
         return writeFile(htmlTemplate);
     })
     .then(writeFileResponse => {
