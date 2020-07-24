@@ -1,16 +1,54 @@
-// create the about section
-const generateCards = Data => {
-    if (!Data) {
+const generateIcon = role =>{
+
+  if(role == "Manager"){
+    return`<i class="icofont-coffee-mug"></i>`;
+  }
+  else if(role == "Engineer"){
+    return`<i class="icofont-engineer"></i>`;
+  }
+  else if(role == "Intern"){
+    return`<i class="icofont-graduate"></i>`;
+  }
+
+}
+
+const generateCloser = closerData =>{
+
+  if(closerData.role == "Manager"){
+    return`<p>${closerData.office}</p>`;
+  }
+  else if(closerData.role == "Engineer"){
+    return`<a href="https://github.com/${closerData.gitHub}" target="_blank"`;
+  }
+  else if(closerData.role == "Intern"){
+    return`<p>${closerData.school}</p>`;
+  }
+
+}
+
+// create the cards
+const generateCards = data => {
+    if (!data) {
         return '';
     }
 
+    let cardString = "";
 
-    return `
-      <section class="my-3" id="about">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">About Me</h2>
-        <p>${EmployeesObjArray}</p>
-      </section>
-    `;
+    for(let i = 0; i < data.length;i++){
+
+      cardString += `
+        <div class="card">
+          <h3 class="card-title">${data[i].name} </h3>
+          ${generateIcon(data[i].role)}
+          <h3 class="card-title">${data[i].role} </h3>
+          <p>${data[i].id}</p>
+          <p>${data[i].email}</p>
+          ${generateCloser(data[i])}
+        </section>
+      `;
+    }
+
+    return cardString;
 };
 
 module.exports = templateData => {

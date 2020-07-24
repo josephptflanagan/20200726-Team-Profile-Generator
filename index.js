@@ -10,7 +10,7 @@ const populateHTML = require('./src/html-template.js');
 const dataEntry = new DataEntry();
 
 dataEntry.dataCollection()
-    .then(populateHTML(DataEntry.data))
+    .then(populateHTML(dataEntry.data))
     .then(htmlTemplate => {
         //console.log(pageMD);
         return writeFile(htmlTemplate);
