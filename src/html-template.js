@@ -1,3 +1,4 @@
+//fills in the icon part of each role's card(coffee mug for the manager, engineer for the engineer, graduate for the intern)
 const generateIcon = role => {
 
   if (role == "Manager") {
@@ -11,7 +12,7 @@ const generateIcon = role => {
   }
 
 }
-
+//fills out the closing part of the each role's card (office number, github username, school)
 const generateCloser = closerData => {
 
   if (closerData.role == "Manager") {
@@ -37,6 +38,7 @@ const generateCards = data => {
 
   for (let i = 0; i < data.length; i++) {
 
+    //each card warranted will add their own verison of this chunk
     cardString += `
       <div class="col-12 col-sm-6 col-md-4 col-xl-3" >
         <div class="card">
@@ -67,9 +69,10 @@ const generateCards = data => {
   return cardString;
 };
 
-module.exports = templateData => {
+  module.exports = templateData => {
 
-  return `
+    //main body of the html string
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
