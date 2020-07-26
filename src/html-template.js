@@ -1,59 +1,75 @@
-const generateIcon = role =>{
+const generateIcon = role => {
 
-  if(role == "Manager"){
-    return`<i class="icofont-coffee-mug"></i>`;
+  if (role == "Manager") {
+    return `<i class="icofont-coffee-mug col-2"></i>`;
   }
-  else if(role == "Engineer"){
-    return`<i class="icofont-engineer"></i>`;
+  else if (role == "Engineer") {
+    return `<i class="icofont-engineer col-2"></i>`;
   }
-  else if(role == "Intern"){
-    return`<i class="icofont-graduate"></i>`;
+  else if (role == "Intern") {
+    return `<i class="icofont-graduate col-2"></i>`;
   }
 
 }
 
-const generateCloser = closerData =>{
+const generateCloser = closerData => {
 
-  if(closerData.role == "Manager"){
-    return`<p>${closerData.office}</p>`;
+  if (closerData.role == "Manager") {
+    return `<p class="card-p">Office Number: ${closerData.officeNumber}</p>`;
   }
-  else if(closerData.role == "Engineer"){
-    return`<a href="https://github.com/${closerData.gitHub}" target="_blank"`;
+  else if (closerData.role == "Engineer") {
+    return `<p class="col-4 card-p">GitHub: </p>
+            <a class="col-8" href="https://github.com/${closerData.gitHub}" target="_blank">${closerData.gitHub}</a>`;
   }
-  else if(closerData.role == "Intern"){
-    return`<p>${closerData.school}</p>`;
+  else if (closerData.role == "Intern") {
+    return `<p class="card-p">School: ${closerData.school}</p>`;
   }
 
 }
 
 // create the cards
 const generateCards = data => {
-    if (!data) {
-        return '';
-    }
+  if (!data) {
+    return '';
+  }
 
-    let cardString = "";
+  let cardString = "";
 
-    for(let i = 0; i < data.length;i++){
+  for (let i = 0; i < data.length; i++) {
 
-      cardString += `
+    cardString += `
+      <div class="col-12 col-sm-6 col-md-4 col-xl-3" >
         <div class="card">
-          <h3 class="card-title">${data[i].name} </h3>
-          ${generateIcon(data[i].role)}
-          <h3 class="card-title">${data[i].role} </h3>
-          <p>${data[i].id}</p>
-          <p>${data[i].email}</p>
-          ${generateCloser(data[i])}
-        </section>
-      `;
-    }
-
-    return cardString;
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title">${data[i].name} </h3>
+              <div class="row">
+                ${generateIcon(data[i].role)}
+                <h3 class="card-title col-10">${data[i].role} </h3>
+              </div>
+            </div>
+            <div class="row card-line">
+              <p class="card-p">Emloyee ID: ${data[i].id}</p>
+            </div>
+            <div class="row card-line">
+              <p class="col-3 card-p">Email:</p>
+              <a class="col-9" href="mailto:${data[i].email}">${data[i].email}</a>
+            </div>
+            <div class="row card-line">
+              ${generateCloser(data[i])}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  //console.log(cardString);
+  return cardString;
 };
 
 module.exports = templateData => {
 
-    return `
+  return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -70,23 +86,24 @@ module.exports = templateData => {
       <!--ICOFONT CDN-->
       <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css">
       <!--CUSTOM STYLESHEET-->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="./generatedStyle.css">
     </head>
     <body>
 
-      <header class="container">
+      <header>
         <h1>My Team</h1>
       </header>
 
-      <main class="container">
+      <main class="row">
         ${generateCards(templateData)}
       </main>
       
-      <footer class="container">
+      <footer class="row">
         <h3>&copy; ${new Date().getFullYear()} by Joseph Flanagan</h3>
       </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </body>
     </html>
     `;
-
 };
