@@ -4,7 +4,7 @@
 [GitHub](https://github.com/josephptflanagan/20200726-Team-Profile-Generator)
 
 ## Generated HTML Sample File
-[Sample](https://github.com/josephptflanagan/20200726-Team-Profile-Generator/blob/develop/dist/GeneratedHTML.html)
+[Sample](https://github.com/josephptflanagan/20200726-Team-Profile-Generator/blob/master/dist/GeneratedHTML.html)
 
 ## Video Walkthrough
 [Video 1](https://drive.google.com/file/d/1sI5bQ_ikWXbaqOwWgodQwvcCcseLdW0s/view)
