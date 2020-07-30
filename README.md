@@ -7,7 +7,8 @@
 [Sample](https://github.com/josephptflanagan/20200726-Team-Profile-Generator/blob/develop/dist/GeneratedHTML.html)
 
 ## Video Walkthrough
-[Video](https://drive.google.com/file/d/1sI5bQ_ikWXbaqOwWgodQwvcCcseLdW0s/view)
+[Video 1](https://drive.google.com/file/d/1sI5bQ_ikWXbaqOwWgodQwvcCcseLdW0s/view)
+[Video 2](https://drive.google.com/file/d/18Sehx3MNMfsAlpeWY0DOnGio82EOMhEV/view)
 
 ## Description
 This program generates an HTML page containing basic contact information for team members.
